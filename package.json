@@ -1,0 +1,31 @@
+{
+  "name": "h5-webview",
+  "version": "0.0.6",
+  "description": "h5版，仿原生view管理器",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "authors": {
+    "name": "xujunjie",
+    "email": "yinhunfeixue@163.com"
+  },
+  "repository": "/webview",
+  "scripts": {
+    "dev": "father doc dev",
+    "build": "father build",
+    "p": "yarn umi-lib build --cjs && npm version patch"
+  },
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "devDependencies": {
+    "father": "^2.16.0",
+    "typescript": "^3.3.3"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/react-dom": "^16.9.4",
+    "classnames": "^2.2.6",
+    "react-dom": "^16.12.0",
+    "umi-library": "^1.6.0"
+  }
+}

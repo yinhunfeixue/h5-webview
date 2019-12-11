@@ -1,0 +1,19 @@
+---
+name: Home
+route: /
+order: -1
+sidebar: true
+---
+import PageManager from './PageManager';
+import PageItem from './PageItem';
+import PageView1 from './PageView1';
+
+<button
+  style={{marginTop:100}}
+  onClick={() => {
+    PageManager.openPage(new PageItem(PageView1, { index: 1 }));
+  }}
+>
+  打开新手机页面
+</button>
+
