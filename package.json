@@ -1,6 +1,6 @@
 {
   "name": "h5-webview",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "h5版，仿原生view管理器",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
