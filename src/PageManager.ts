@@ -3,7 +3,22 @@ import ReactDOM from 'react-dom';
 import PageItem from './PageItem';
 
 /**
- * 页面管理器
+ * ## 页面管理器
+ * 
+ * @example
+ * ```
+ * import React from 'react';
+ * import PageManager, { PageItem, PageView } from 'h5-webview';
+ * const App: React.FC = () => {
+ *   return (
+ *     <div>
+ *       <button onClick={() => {
+ *         PageManager.openPage(new PageItem(PageView, { index: 1 }));
+ *       }}>弹出</button>
+ *     </div>
+ *   );
+ * }
+ * ```
  */
 class PageManager {
   private static _pageList: PageItem[] = [];

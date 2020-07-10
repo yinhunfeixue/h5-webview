@@ -10,7 +10,18 @@ export enum IDirection {
 
 interface IToucherState {}
 interface IToucherProps extends IComponentProps {
+  /**
+   * 触发生效的距离
+   */
   effectDistance?: number;
+
+  /**
+   * 触摸结束后的处理函数
+   * @param horizontal 水平移动方向
+   * @param vertical 竖直移动方向
+   * @param x 水平移动距离
+   * @param y 竖直移动距离
+   */
   onTouch?: (
     horizontal: IDirection,
     vertical: IDirection,
