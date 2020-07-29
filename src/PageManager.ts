@@ -4,7 +4,7 @@ import PageItem from './PageItem';
 
 /**
  * ## 页面管理器
- * 
+ *
  * @example
  * ```
  * import React from 'react';
@@ -27,15 +27,13 @@ class PageManager {
 
   /**
    * 打开新页面
-   * @param pageItem 页面数据 
+   * @param pageItem 页面数据
    * @param replaceSameType 是否替换同类型的页面
    */
   public static openPage(pageItem: PageItem, replaceSameType: boolean = false) {
     // 如果使用已存在的页面，在_pageList查找是否存在同类型的项
 
-    let oldItem = replaceSameType
-      ? this._getItemByClassType(pageItem.classType)
-      : null;
+    let oldItem = replaceSameType ? this._getItemByClassType(pageItem.classType) : null;
     // 如果查找到旧数据，则移除旧数据
     if (oldItem) {
       this.removePage(oldItem);
@@ -93,10 +91,10 @@ class PageManager {
                 Object.assign({}, item.props, {
                   close: () => {
                     this.closePage(item);
-                  }
-                })
+                  },
+                }),
               ),
-              container
+              container,
             );
           }
           this.root.appendChild(container);
