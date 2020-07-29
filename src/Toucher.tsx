@@ -28,7 +28,16 @@ interface IToucherProps extends IComponentProps {
     x: number,
     y: number
   ) => void;
+
+  /**
+   * 触摸中触发的事件
+   */
   onTouching?: (x: number, y: number) => void;
+
+  /**
+   * 触发动作开始时，判断是否开启触摸
+   */
+  validateStartTouch?: (x: number, y: number) => boolean;
 }
 
 /**
@@ -37,6 +46,7 @@ interface IToucherProps extends IComponentProps {
 class Toucher extends Component<IToucherProps, IToucherState> {
   private _startX: number = 0;
   private _startY: number = 0;
+  private _touching: boolean = false;
 
   render() {
     const {
@@ -45,22 +55,34 @@ class Toucher extends Component<IToucherProps, IToucherState> {
       onTouch,
       className,
       style,
-      onTouching
+      onTouching,
+      validateStartTouch
     } = this.props;
 
     let otherProps: any = Object.assign({}, this.props);
     delete otherProps.onTouch;
     delete otherProps.onTouching;
+    delete otherProps.validateStartTouch;
     return (
       <div
         className={className}
         style={style}
         onTouchStart={(event: TouchEvent) => {
-          event.stopPropagation();
-          this._startX = event.touches[0].pageX;
-          this._startY = event.touches[0].pageY;
+          const x = event.touches[0].pageX;
+          const y = event.touches[0].pageY;
+          const touchEnable = validateStartTouch ? validateStartTouch(x, y) : true;
+          if (touchEnable) {
+            event.stopPropagation();
+            this._touching = true;
+            this._startX = event.touches[0].pageX;
+            this._startY = event.touches[0].pageY;
+          }
         }}
         onTouchMove={(event: TouchEvent) => {
+          if (!this._touching) {
+            return;
+          }
+          event.stopPropagation();
           if (onTouching) {
             const touch = event.changedTouches[0];
             const currentX = touch.pageX;
@@ -72,7 +94,11 @@ class Toucher extends Component<IToucherProps, IToucherState> {
           }
         }}
         onTouchEnd={(event: TouchEvent) => {
+          if (!this._touching) {
+            return;
+          }
           event.stopPropagation();
+          this._touching = false;
           const touch = event.changedTouches[0];
           const currentX = touch.pageX;
           const currentY = touch.pageY;

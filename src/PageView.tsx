@@ -139,6 +139,9 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
               this.forceUpdate();
             }
           }}
+          validateStartTouch={(x) => {
+            return x < 30;
+          }}
           onTouch={(h, v, x, y) => {
             if (!disableTouchBack) {
               this._touching = false;
