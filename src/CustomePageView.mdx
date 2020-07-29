@@ -1,0 +1,113 @@
+---
+name: CustomePageView
+route: /CustomePageView
+order: 1
+sidebar: true
+---
+import PageManager from './PageManager';
+import PageItem from './PageItem';
+import CustomePageView from './CustomePageView';
+import { Playground, Props } from 'docz';
+
+## 自定义弹窗组件，各属性在组件内部设置好
+
+通常，一个窗口的属性，例如是否显示页头、页面内容是什么，是在窗口内部固定的。
+
+此时，应当让窗口继承自PageView，并在组件内部重写各项属性，而非从props传入
+
+----
+本示例展示了一个“自定义的窗口”，此窗口具有以下特征
+
++ 窗口的props有一个属性index，表示此窗口是第几个被打开的窗口
++ 当index是3的倍数时，表现出不一样的特征。
+  + 显示标题栏
+  + 禁用触摸返回，只能点标题栏的返回按钮
++ 当index 是6的倍数时
+  + 隐藏返回按钮
+  + 启用触摸返回
+
+<Playground>
+{
+  <button
+    onClick={() => {
+      PageManager.openPage(new PageItem(CustomePageView, { index: 1 }));
+    }}
+  >
+    打开自定义页面-CustomePageView
+  </button>
+}
+</Playground>
+
+CustomePageView源码
+```javascript
+import React from 'react';
+import PageItem from './PageItem';
+import PageManager from './PageManager';
+import PageView, { IPageViewProps } from './PageView';
+
+interface ICustomePageViewState {}
+interface ICustomePageViewProps extends IPageViewProps {
+  index: any;
+}
+
+/**
+ * CustomePageView
+ */
+class CustomePageView extends PageView<ICustomePageViewProps, ICustomePageViewState> {
+  static defaultProps = {
+    title: 'CustomePageViewTitle',
+  };
+
+  get disabledBack() {
+    const index = this.props.index;
+    return index % 3 !== 0;
+  }
+
+  get disableTouchBack() {
+    const index = this.props.index;
+    return index % 3 === 0;
+  }
+
+  get showHeader() {
+    const index = this.props.index;
+    return index % 3 === 0;
+  }
+
+  get extra() {
+    const index = this.props.index;
+    if (index % 3 === 0) {
+      return <div>+</div>;
+    }
+    return null;
+  }
+
+  get title() {
+    return `这里顶栏${this.props.index}`;
+  }
+
+  renderChildren() {
+    const index = this.props.index;
+    return (
+      <div>
+        窗口序号：{index}
+        <br />
+        <a
+          onClick={() => {
+            PageManager.openPage(
+              new PageItem(CustomePageView, {
+                index: index + 1,
+              }),
+            );
+          }}
+        >
+          打开下一个窗口
+        </a>
+        <p> {this.showHeader ? '点击返回按钮可返回' : '向右拖动可返回'}</p>
+      </div>
+    );
+  }
+}
+
+export default CustomePageView;
+
+```

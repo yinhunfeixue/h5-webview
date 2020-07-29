@@ -1,0 +1,33 @@
+---
+name: PageViewWrap
+route: /PageViewWrap
+order: -1
+sidebar: true
+---
+import PageManager from './PageManager';
+import PageItem from './PageItem';
+import PageViewWrap from './PageViewWrap';
+import { Playground, Props } from 'docz';
+
+## 通用的弹窗组件，子元素及各属性可通过props传入
+
+<Playground>
+   <button
+    onClick={() => {
+      PageManager.openPage(
+        new PageItem(
+          PageViewWrap, 
+          {
+            children:<div>ccc</div>,
+            title:'aa',
+            extra:<span>+</span>
+          }
+      ));
+    }}
+  >
+    打开通用页面容器
+  </button>
+</Playground>
+
+<Props of={PageViewWrap} />
+

@@ -138,7 +138,7 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
             }
           }}
           validateStartTouch={x => {
-            return x < 30;
+            return x < 50;
           }}
           onTouch={(h, v, x, y) => {
             if (!disableTouchBack) {
@@ -153,7 +153,7 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
           }}
           className={classnames('PageView', this._show ? '' : 'PageViewClose')}
           onAnimationEnd={() => {
-            if (!this._show) {
+            if (!this._show && close) {
               close();
             }
           }}

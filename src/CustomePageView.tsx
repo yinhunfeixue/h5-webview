@@ -3,27 +3,27 @@ import PageItem from './PageItem';
 import PageManager from './PageManager';
 import PageView, { IPageViewProps } from './PageView';
 
-interface IPageView1State {}
-interface IPageView1Props extends IPageViewProps {
+interface ICustomePageViewState {}
+interface ICustomePageViewProps extends IPageViewProps {
   index: any;
 }
 
 /**
- * PageView1
+ * CustomePageView
  */
-class PageView1 extends PageView<IPageView1Props, IPageView1State> {
+class CustomePageView extends PageView<ICustomePageViewProps, ICustomePageViewState> {
   static defaultProps = {
-    title: 'PageView1Title',
+    title: 'CustomePageViewTitle',
   };
 
   get disabledBack() {
     const index = this.props.index;
-    return index % 3 !== 0;
+    return index % 6 === 0;
   }
 
   get disableTouchBack() {
     const index = this.props.index;
-    return index % 3 === 0;
+    return index % 3 === 0 && index % 6 !== 0;
   }
 
   get showHeader() {
@@ -52,7 +52,7 @@ class PageView1 extends PageView<IPageView1Props, IPageView1State> {
         <a
           onClick={() => {
             PageManager.openPage(
-              new PageItem(PageView1, {
+              new PageItem(CustomePageView, {
                 index: index + 1,
               }),
             );
@@ -66,4 +66,4 @@ class PageView1 extends PageView<IPageView1Props, IPageView1State> {
   }
 }
 
-export default PageView1;
+export default CustomePageView;
