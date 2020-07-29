@@ -7,13 +7,42 @@ sidebar: true
 import PageManager from './PageManager';
 import PageItem from './PageItem';
 import PageView1 from './PageView1';
+import PageViewWrap from './PageViewWrap';
+import { Playground, Props } from 'docz';
 
-<button
-  style={{marginTop:100}}
-  onClick={() => {
-    PageManager.openPage(new PageItem(PageView1, { index: 1 }));
-  }}
->
-  打开新手机页面
-</button>
+
+
+<Playground>
+{
+  <button
+    style={{marginTop:100}}
+    onClick={() => {
+      PageManager.openPage(new PageItem(PageView1, { index: 1 }));
+    }}
+  >
+    打开自定义页面-PageView1
+  </button>
+}
+</Playground>
+
+<Playground>
+   <button
+    style={{marginTop:100}}
+    onClick={() => {
+      PageManager.openPage(
+        new PageItem(
+          PageViewWrap, 
+          {
+            children:<div>ccc</div>,
+            title:'aa',
+            extra:<span>+</span>
+          }
+      ));
+    }}
+  >
+    打开通用页面容器
+  </button>
+</Playground>
+
+<Props of={PageViewWrap} />
 

@@ -1,14 +1,12 @@
 import IComponentProps from '@/base/interfaces/IComponentProps';
 import React, { Component, ReactNode } from 'react';
-import Toucher from './Toucher';
 import './PageView.less';
+import Toucher from './Toucher';
 
 const classnames = require('classnames');
 
 export interface IPageViewProps extends IComponentProps {
-  close: () => void;
-  title: string;
-  disabledBack: boolean;
+  close?: () => void;
 }
 
 /**
@@ -84,7 +82,7 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
             />
           )}
           <h1>{this.title}</h1>
-          <div className='PageViewExtra'>{extra}</div>
+          <div className="PageViewExtra">{extra}</div>
         </header>
       );
     }
@@ -109,16 +107,16 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
   }
 
   render() {
-    const { close } = this.props;
     const _closeTouchX = this._closeTouchX;
     const disableTouchBack = this.disableTouchBack;
+    const { close } = this.props;
 
     const style: any = {
-      transform: `translate(${this._touchX}px)`
+      transform: `translate(${this._touchX}px)`,
     };
 
     const bgStyle: any = {
-      opacity: 0.2 + Math.max(0, (_closeTouchX - this._touchX) / _closeTouchX)
+      opacity: 0.2 + Math.max(0, (_closeTouchX - this._touchX) / _closeTouchX),
     };
 
     if (this._touching) {
@@ -139,7 +137,7 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
               this.forceUpdate();
             }
           }}
-          validateStartTouch={(x) => {
+          validateStartTouch={x => {
             return x < 30;
           }}
           onTouch={(h, v, x, y) => {
@@ -153,10 +151,7 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
               this.forceUpdate();
             }
           }}
-          className={classnames(
-            'PageView',
-            this._show ? '' : 'PageViewClose'
-          )}
+          className={classnames('PageView', this._show ? '' : 'PageViewClose')}
           onAnimationEnd={() => {
             if (!this._show) {
               close();

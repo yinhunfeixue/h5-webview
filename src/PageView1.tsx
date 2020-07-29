@@ -1,9 +1,9 @@
 import React from 'react';
-import PageView, { IPageViewProps } from './PageView';
-import PageManager from './PageManager';
 import PageItem from './PageItem';
+import PageManager from './PageManager';
+import PageView, { IPageViewProps } from './PageView';
 
-interface IPageView1State { }
+interface IPageView1State {}
 interface IPageView1Props extends IPageViewProps {
   index: any;
 }
