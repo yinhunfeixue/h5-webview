@@ -1,12 +1,12 @@
 {
-  "vendors.css": "/h5-webview/static/css/vendors.6d5c659f04d9a6295c8f.css",
+  "vendors.css": "/h5-webview/static/css/vendors.5dc7810a7af43fbbb9b6.css",
   "vendors.js": "/h5-webview/static/js/vendors.c5f8247d.js",
-  "app.js": "/h5-webview/static/js/app.6d5c659f04d9a6295c8f.js",
-  "src-custome-page-view.css": "/h5-webview/static/css/src-custome-page-view.6d5c659f04d9a6295c8f.css",
-  "src-custome-page-view.js": "/h5-webview/static/js/src-custome-page-view.a176ccae.js",
+  "app.js": "/h5-webview/static/js/app.5dc7810a7af43fbbb9b6.js",
+  "src-custome-page-view.css": "/h5-webview/static/css/src-custome-page-view.5dc7810a7af43fbbb9b6.css",
+  "src-custome-page-view.js": "/h5-webview/static/js/src-custome-page-view.58a67c37.js",
   "src-index.js": "/h5-webview/static/js/src-index.0fc723ac.js",
-  "src-page-view-wrap.css": "/h5-webview/static/css/src-page-view-wrap.6d5c659f04d9a6295c8f.css",
-  "src-page-view-wrap.js": "/h5-webview/static/js/src-page-view-wrap.e018b8d0.js",
+  "src-page-view-wrap.css": "/h5-webview/static/css/src-page-view-wrap.5dc7810a7af43fbbb9b6.css",
+  "src-page-view-wrap.js": "/h5-webview/static/js/src-page-view-wrap.e15719d8.js",
   "index.html": "/h5-webview/index.html",
   "static/img/demo.gif": "/h5-webview/static/img/demo.adcccfbd.gif"
 }
