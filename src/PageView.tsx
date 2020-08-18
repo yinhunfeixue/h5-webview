@@ -120,7 +120,7 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
     };
 
     const bgStyle: any = {
-      opacity: Math.max(1, 0.2 + Math.max(0, (_closeTouchX - this._touchX) / _closeTouchX)),
+      opacity: Math.min(1, 0.2 + Math.max(0, (_closeTouchX - this._touchX) / _closeTouchX)),
     };
 
     if (this._touching) {
