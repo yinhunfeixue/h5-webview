@@ -27,6 +27,10 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
     return '';
   }
 
+  get className(): string {
+    return '';
+  }
+
   /**
    * 标题
    */
@@ -109,14 +113,14 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
   render() {
     const _closeTouchX = this._closeTouchX;
     const disableTouchBack = this.disableTouchBack;
-    const { close } = this.props;
+    const { close, className } = this.props;
 
     const style: any = {
       transform: `translate(${this._touchX}px)`,
     };
 
     const bgStyle: any = {
-      opacity: 0.2 + Math.max(0, (_closeTouchX - this._touchX) / _closeTouchX),
+      opacity: Math.max(1, 0.2 + Math.max(0, (_closeTouchX - this._touchX) / _closeTouchX)),
     };
 
     if (this._touching) {
@@ -126,7 +130,7 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
     return (
       <React.Fragment>
         <div
-          className={classnames('PageViewBg', this._show ? '' : 'PageViewBgClose')}
+          className={classnames('PageViewBg', this._show ? '' : 'PageViewBgClose', className)}
           style={bgStyle}
         />
         <Toucher
@@ -151,7 +155,7 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
               this.forceUpdate();
             }
           }}
-          className={classnames('PageView', this._show ? '' : 'PageViewClose')}
+          className={classnames('PageView', this.className, this._show ? '' : 'PageViewClose')}
           onAnimationEnd={() => {
             if (!this._show && close) {
               close();

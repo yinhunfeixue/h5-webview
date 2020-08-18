@@ -25,6 +25,10 @@ class PageViewWrap extends PageView<IPageViewWrapProps, IPageViewWrapState> {
     return true;
   }
 
+  get className() {
+    return this.props.className || '';
+  }
+
   get title() {
     return this.props.title || '';
   }
