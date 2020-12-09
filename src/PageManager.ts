@@ -1,8 +1,7 @@
-import { PageViewWrap } from '@/';
-import { IPageViewWrapProps } from '@/PageViewWrap';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PageItem from './PageItem';
+import PageViewWrap, { IPageViewWrapProps } from './PageViewWrap';
 
 /**
  * ## 页面管理器
