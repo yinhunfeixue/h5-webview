@@ -134,14 +134,14 @@ class PageView<P extends IPageViewProps, S> extends Component<P, S> {
           style={bgStyle}
         />
         <Toucher
-          onTouching={x => {
+          onTouching={(x) => {
             if (!disableTouchBack) {
               this._touching = true;
               this._touchX = Math.max(0, x);
               this.forceUpdate();
             }
           }}
-          validateStartTouch={x => {
+          validateStartTouch={(x) => {
             return x < 50;
           }}
           onTouch={(h, v, x, y) => {

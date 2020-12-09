@@ -30,7 +30,7 @@ class PageManager {
    * @param pageItem 页面数据
    * @param replaceSameType 是否替换同类型的页面
    */
-  public static openPage(pageItem: PageItem, replaceSameType: boolean = false) {
+  public static openPage<P>(pageItem: PageItem<P>, replaceSameType: boolean = false) {
     // 如果使用已存在的页面，在_pageList查找是否存在同类型的项
 
     let oldItem = replaceSameType ? this._getItemByClassType(pageItem.classType) : null;
