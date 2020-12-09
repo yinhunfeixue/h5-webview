@@ -15,6 +15,7 @@
         "src/*"
       ]
     },
+    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true
   },
   "include": [

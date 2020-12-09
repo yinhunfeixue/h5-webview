@@ -26,14 +26,17 @@
     "react": "16.x"
   },
   "devDependencies": {
-    "father": "^2.16.0",
-    "typescript": "^3.3.3"
+    "@types/react-router": "^5.1.8",
+    "father": "^2.29.3",
+    "typescript": "^3.9.2"
   },
   "license": "MIT",
   "dependencies": {
-    "@types/react-dom": "^16.9.4",
+    "@types/react-dom": "^16.9.10",
+    "@types/vfile-message": "^2.0.0",
     "classnames": "^2.2.6",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.14.0",
+    "react-router": "^5.2.0",
     "umi-library": "^1.6.0"
   }
 }
