@@ -1,6 +1,6 @@
 {
   "name": "h5-webview",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "h5版，仿原生view管理器",
   "authors": {
     "name": "xujunjie",
@@ -38,7 +38,6 @@
   },
   "license": "MIT",
   "dependencies": {
-
     "classnames": "^2.2.6",
     "react-dom": "^16.14.0",
     "react-router": "^5.2.0",
