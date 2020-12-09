@@ -28,16 +28,17 @@
   "devDependencies": {
     "@types/react-router": "^5.1.8",
     "father": "^2.29.3",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.2",
+    "@types/react": "^16.14.2",
+    "@types/react-dom": "^16.9.10",
+    "@types/vfile-message": "^2.0.0"
   },
   "resolutions": {
     "@types/react": "^16.14.2"
   },
   "license": "MIT",
   "dependencies": {
-    "@types/react": "^16.14.2",
-    "@types/react-dom": "^16.9.10",
-    "@types/vfile-message": "^2.0.0",
+
     "classnames": "^2.2.6",
     "react-dom": "^16.14.0",
     "react-router": "^5.2.0",
