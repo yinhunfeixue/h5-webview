@@ -15,9 +15,9 @@
     "publicNpm": "npm run build && npm login && npm version patch && npm publish",
     "public": "npm run publicGitHub && npm run publicNpm"
   },
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "typings": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
     "es",
     "lib",
