@@ -1,3 +1,5 @@
+import { PageViewWrap } from '@/';
+import { IPageViewWrapProps } from '@/PageViewWrap';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PageItem from './PageItem';
@@ -45,6 +47,13 @@ class PageManager {
     this._pageList.push(pageItem);
     this._linkItemAndContainer(pageItem, container);
     this._updateRender();
+  }
+
+  public static openWrapPage(props: IPageViewWrapProps) {
+    PageManager.openPage({
+      classType: PageViewWrap,
+      props,
+    });
   }
 
   /**

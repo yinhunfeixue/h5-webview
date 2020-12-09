@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import PageView, { IPageViewProps } from './PageView';
 
 interface IPageViewWrapState {}
-interface IPageViewWrapProps extends IPageViewProps {
+export interface IPageViewWrapProps extends IPageViewProps {
   children: ReactNode;
   headerClassName?: string;
   showHeader?: boolean;
