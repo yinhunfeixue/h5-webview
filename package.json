@@ -30,8 +30,12 @@
     "father": "^2.29.3",
     "typescript": "^3.9.2"
   },
+  "resolutions": {
+    "@types/react": "^16.14.2"
+  },
   "license": "MIT",
   "dependencies": {
+    "@types/react": "^16.14.2",
     "@types/react-dom": "^16.9.10",
     "@types/vfile-message": "^2.0.0",
     "classnames": "^2.2.6",
