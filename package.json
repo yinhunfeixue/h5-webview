@@ -2,8 +2,6 @@
   "name": "h5-webview",
   "version": "2.0.12",
   "description": "h5版，仿原生view管理器",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
   "authors": {
     "name": "xujunjie",
     "email": "yinhunfeixue@163.com"
@@ -14,9 +12,16 @@
     "build": "father build",
     "p": "yarn umi-lib build --cjs && npm version patch",
     "publicGitHub": "father doc build && father doc deploy",
-    "publicNpm": "npm run build && npm login && npm version patch && cp package.json ./dist/package.json && cp README.md ./dist/README.md && cd dist && npm publish",
+    "publicNpm": "npm run build && npm login && npm version patch && npm publish",
     "public": "npm run publicGitHub && npm run publicNpm"
   },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "es",
+    "lib"
+  ],
   "peerDependencies": {
     "react": "16.x"
   },

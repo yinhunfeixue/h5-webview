@@ -1,8 +1,12 @@
 import { IBundleOptions } from 'father';
 
 const options: IBundleOptions = {
-  cjs: 'rollup',
-  esm: 'rollup',
+  cjs: {
+    type: 'babel',
+  },
+  esm: {
+    type: 'babel',
+  },
   doc: {
     typescript: true,
     title: 'h5-webview',
