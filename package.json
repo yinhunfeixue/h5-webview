@@ -20,7 +20,8 @@
   "typings": "lib/index.d.ts",
   "files": [
     "es",
-    "lib"
+    "lib",
+    "dist"
   ],
   "peerDependencies": {
     "react": "16.x"
