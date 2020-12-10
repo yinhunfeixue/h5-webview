@@ -1,0 +1,64 @@
+.PageHeader {
+  position: relative;
+  border-bottom: 1px solid #eee;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  line-height: 1;
+  box-sizing: border-box;
+
+  height: 50px;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  .Back {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px 0 10px;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .BackIcon {
+      display: inline-block;
+      border: 1px solid #000;
+      border-bottom: none;
+      border-right: none;
+      width: 12px;
+      height: 12px;
+      transform: translateX(4px) rotate(-45deg);
+    }
+  }
+
+  .Title {
+    font-size: 16px;
+    text-align: center;
+    font-weight: normal;
+    color: #000;
+    margin: 0;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 50px;
+  }
+
+  .Extra {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-right: 10px;
+  }
+}
