@@ -90,7 +90,6 @@ class Page<P extends IPageProps, S> extends Component<P, S> {
    * 重写时唯一要注意的地方是：关闭页面的需调用 this.close();
    */
   protected renderPageView(): ReactNode {
-    const { children } = this.props;
     const {
       title,
       extra,
@@ -112,9 +111,13 @@ class Page<P extends IPageProps, S> extends Component<P, S> {
         headerClassName={headerClassName}
         onBack={disabledBack ? undefined : () => this.close()}
       >
-        {children}
+        {this.renderChildren()}
       </PageView>
     );
+  }
+
+  protected renderChildren() {
+    return null;
   }
 
   /**
