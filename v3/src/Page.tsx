@@ -1,7 +1,7 @@
-import IComponentProps from '@/base/interfaces/IComponentProps';
-import PageView from '@/PageView';
 import React, { Component, CSSProperties, ReactNode } from 'react';
+import IComponentProps from './base/interfaces/IComponentProps';
 import './Page.less';
+import PageView from './PageView';
 import Toucher from './Toucher';
 
 const classnames = require('classnames');

@@ -1,11 +1,11 @@
-import IComponentProps from '@/base/interfaces/IComponentProps';
 import React, { Component, TouchEvent } from 'react';
+import IComponentProps from './base/interfaces/IComponentProps';
 export enum IDirection {
   NONE,
   TO_TOP,
   TO_BOTTOM,
   TO_LEFT,
-  TO_RIGHT
+  TO_RIGHT,
 }
 
 interface IToucherState {}
@@ -26,7 +26,7 @@ interface IToucherProps extends IComponentProps {
     horizontal: IDirection,
     vertical: IDirection,
     x: number,
-    y: number
+    y: number,
   ) => void;
 
   /**
@@ -56,7 +56,7 @@ class Toucher extends Component<IToucherProps, IToucherState> {
       className,
       style,
       onTouching,
-      validateStartTouch
+      validateStartTouch,
     } = this.props;
 
     let otherProps: any = Object.assign({}, this.props);
@@ -70,7 +70,9 @@ class Toucher extends Component<IToucherProps, IToucherState> {
         onTouchStart={(event: TouchEvent) => {
           const x = event.touches[0].pageX;
           const y = event.touches[0].pageY;
-          const touchEnable = validateStartTouch ? validateStartTouch(x, y) : true;
+          const touchEnable = validateStartTouch
+            ? validateStartTouch(x, y)
+            : true;
           if (touchEnable) {
             event.stopPropagation();
             this._touching = true;

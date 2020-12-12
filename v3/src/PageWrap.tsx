@@ -1,5 +1,5 @@
-import Page, { IPageProps } from '@/Page';
 import { CSSProperties, ReactNode } from 'react';
+import Page, { IPageProps } from './Page';
 
 interface IPageWrapState {}
 export interface IPageWrapProps extends IPageProps {

@@ -1,6 +1,6 @@
-import IComponentProps from '@/base/interfaces/IComponentProps';
 import classnames from 'classnames';
 import React, { Component, ReactNode } from 'react';
+import IComponentProps from './base/interfaces/IComponentProps';
 import './PageHeader.less';
 
 interface IPageHeaderState {}

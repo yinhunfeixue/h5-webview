@@ -1,6 +1,6 @@
-import PageHeader, { IPageHeaderProps } from '@/PageHeader';
 import classnames from 'classnames';
 import React, { Component, CSSProperties, ReactNode } from 'react';
+import PageHeader, { IPageHeaderProps } from './PageHeader';
 import './PageView.less';
 
 interface IPageViewState {}
