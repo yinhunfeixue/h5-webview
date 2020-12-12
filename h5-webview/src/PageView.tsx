@@ -14,6 +14,11 @@ interface IPageViewProps extends IPageHeaderProps {
    * 页头内联样式
    */
   headerStyle?: CSSProperties;
+
+  /**
+   * 是否显示页头
+   */
+  hideHeader?: boolean;
 }
 
 class PageView extends Component<IPageViewProps, IPageViewState> {
@@ -25,7 +30,11 @@ class PageView extends Component<IPageViewProps, IPageViewState> {
       backIcon,
       headerClassName,
       headerStyle,
+      hideHeader,
     } = this.props;
+    if (hideHeader) {
+      return null;
+    }
 
     return (
       <PageHeader

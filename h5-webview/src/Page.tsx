@@ -1,6 +1,6 @@
 import IComponentProps from '@/base/interfaces/IComponentProps';
 import PageView from '@/PageView';
-import React, { Component, ReactNode } from 'react';
+import React, { Component, CSSProperties, ReactNode } from 'react';
 import './Page.less';
 import Toucher from './Toucher';
 
@@ -20,50 +20,65 @@ class Page<P extends IPageProps, S> extends Component<P, S> {
   private _touching: boolean = false;
 
   /**
-   * 头部样式名，其中：
-   * + .className i 对应返回按钮
-   * + .className h1 对应标题栏
+   * 页头样式名
    */
-  get headerClassName(): string {
+  protected get headerClassName(): string {
     return '';
   }
 
-  get className(): string {
+  /**
+   * 页头内联样式
+   */
+  protected get headerStyle(): CSSProperties {
+    return {};
+  }
+
+  /**
+   * 样式名
+   */
+  protected get className(): string {
     return '';
+  }
+
+  /**
+   * 内联样式
+   */
+  protected get style(): CSSProperties {
+    return {};
   }
 
   /**
    * 标题
    */
-  get title(): string {
+  protected get title(): string {
     return '';
   }
 
   /**
-   * 是否显示头部
+   * 是否隐藏头部
    */
-  get showHeader(): boolean {
-    return true;
+  protected get hideHeader(): boolean {
+    return false;
   }
 
   /**
    * 是否禁用返回按钮
    */
-  get disabledBack(): boolean {
+  protected get disabledBack(): boolean {
     return false;
   }
 
   /**
    * 是否禁用触摸返回
    */
-  get disableTouchBack(): boolean {
+  protected get disableTouchBack(): boolean {
     return false;
   }
 
   /**
    * 额外的内容，显示在头部右侧
    */
-  get extra(): ReactNode {
+  protected get extra(): ReactNode {
     return null;
   }
 
@@ -76,11 +91,25 @@ class Page<P extends IPageProps, S> extends Component<P, S> {
    */
   protected renderPageView(): ReactNode {
     const { children } = this.props;
-    const { title, extra, disabledBack } = this;
+    const {
+      title,
+      extra,
+      disabledBack,
+      headerClassName,
+      headerStyle,
+      className,
+      style,
+      hideHeader,
+    } = this;
     return (
       <PageView
         title={title}
         extra={extra}
+        hideHeader={hideHeader}
+        headerStyle={headerStyle}
+        className={className}
+        style={style}
+        headerClassName={headerClassName}
         onBack={disabledBack ? undefined : () => this.close()}
       >
         {children}
@@ -98,7 +127,7 @@ class Page<P extends IPageProps, S> extends Component<P, S> {
     }
   }
 
-  render() {
+  public render() {
     const _closeTouchX = this._closeTouchX;
     const disableTouchBack = this.disableTouchBack;
     const { close, className } = this.props;
@@ -156,9 +185,7 @@ class Page<P extends IPageProps, S> extends Component<P, S> {
             this._show ? '' : 'PageClose',
           )}
           onAnimationEnd={() => {
-            console.log('end');
             if (!this._show && close) {
-              console.log('close', close);
               close();
             }
           }}
