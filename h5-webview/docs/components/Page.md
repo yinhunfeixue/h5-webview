@@ -43,7 +43,7 @@ class MyPage extends Page {
 
   protected get headerStyle(): CSSProperties {
     return {
-      backgroundColor: '#aaa',
+      backgroundColor: '#f2f2f2',
     };
   }
 

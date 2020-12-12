@@ -1,7 +1,7 @@
 import IComponentProps from '@/base/interfaces/IComponentProps';
 import classnames from 'classnames';
 import React, { Component, ReactNode } from 'react';
-import styles from './PageHeader.less';
+import './PageHeader.less';
 
 interface IPageHeaderState {}
 export interface IPageHeaderProps extends IComponentProps {
@@ -36,14 +36,14 @@ class PageHeader extends Component<IPageHeaderProps, IPageHeaderState> {
 
     return (
       <div
-        className={styles.Back}
+        className="PageHeaderBack"
         onClick={() => {
           if (onBack) {
             onBack();
           }
         }}
       >
-        {backIcon || <i className={styles.BackIcon} />}
+        {backIcon || <i className="BackIcon" />}
       </div>
     );
   }
@@ -51,10 +51,10 @@ class PageHeader extends Component<IPageHeaderProps, IPageHeaderState> {
   public render(): ReactNode {
     const { extra, title, className, style } = this.props;
     return (
-      <div className={classnames(styles.PageHeader, className)} style={style}>
+      <div className={classnames('PageHeader', className)} style={style}>
         {this.renderBack()}
-        <div className={styles.Title}>{title}</div>
-        <div className={styles.Extra}>{extra}</div>
+        <div className="PageHeaderTitle">{title}</div>
+        <div className="PageHeaderExtra">{extra}</div>
       </div>
     );
   }

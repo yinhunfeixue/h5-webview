@@ -1,7 +1,7 @@
 import PageHeader, { IPageHeaderProps } from '@/PageHeader';
 import classnames from 'classnames';
 import React, { Component, CSSProperties, ReactNode } from 'react';
-import styles from './PageView.less';
+import './PageView.less';
 
 interface IPageViewState {}
 interface IPageViewProps extends IPageHeaderProps {
@@ -51,7 +51,7 @@ class PageView extends Component<IPageViewProps, IPageViewState> {
   public render(): ReactNode {
     const { className, style, children } = this.props;
     return (
-      <div className={classnames(styles.PageView, className)} style={style}>
+      <div className={classnames('PageView', className)} style={style}>
         {this.renderHeader()}
         <main>{children}</main>
       </div>
