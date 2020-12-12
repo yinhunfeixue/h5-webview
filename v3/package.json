@@ -1,7 +1,6 @@
 {
-  "private": true,
   "name": "h5-webview",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "h5版，仿原生view管理器",
   "scripts": {
     "start": "dumi dev",
@@ -13,7 +12,7 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "publicNpm": "npm run build && npm login && npm version patch && npm publish",
+    "publicNpm": "npm run build && npm version patch && npm publish",
     "public": "npm run deploy && npm run publicNpm"
   },
   "repository": {
