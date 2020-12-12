@@ -36,6 +36,9 @@
     "core-js": "^3.8.1",
     "react": "^16.12.0"
   },
+  "resolutions": {
+    "@types/react": "^16.14.2"
+  },
   "devDependencies": {
     "@types/classnames": "^2.2.11",
     "@types/react": "16.14.2",
@@ -46,6 +49,7 @@
     "gh-pages": "^3.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
-    "yorkie": "^2.0.0"
+    "yorkie": "^2.0.0",
+    "react-router": "^5.2.0"
   }
 }
