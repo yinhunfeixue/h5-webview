@@ -12,7 +12,7 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "publicNpm": "npm run build && npm version patch && npm publish",
+    "publicNpm": "npm run build && npm login && npm version patch && npm publish",
     "public": "npm run deploy && npm run publicNpm"
   },
   "repository": {
