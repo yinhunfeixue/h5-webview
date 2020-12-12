@@ -31,7 +31,7 @@ class PageHeader extends Component<IPageHeaderProps, IPageHeaderState> {
     const { backIcon, onBack } = this.props;
     const showBack = Boolean(onBack);
     if (!showBack) {
-      return null;
+      return <div></div>;
     }
 
     return (

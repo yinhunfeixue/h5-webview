@@ -57,11 +57,13 @@ class PageManager {
    * 打开PageWrap
    * @param props
    */
-  public static openPageWrap(props: IPageWrapProps) {
-    PageManager.openPage({
+  public static openPageWrap(props: IPageWrapProps): PageItem {
+    const pageItem: PageItem = {
       classType: PageWrap,
       props,
-    });
+    };
+    PageManager.openPage(pageItem);
+    return pageItem;
   }
 
   /**

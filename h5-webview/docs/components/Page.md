@@ -1,3 +1,7 @@
+---
+order: 2
+---
+
 # Page
 
 **完整的弹出页面，不仅包含页面外观，还包含了滑动等功能。**
@@ -26,7 +30,7 @@ export default () => {
 };
 ```
 
-### 自定义页面内容
+### 自定义业务页面
 
 ```tsx
 import React from 'react';
@@ -39,12 +43,17 @@ class MyPage extends Page {
 
   protected get headerStyle(): CSSProperties {
     return {
-      backgroundColor: 'red',
+      backgroundColor: '#aaa',
     };
   }
 
   protected renderChildren() {
-    return <div>页面内容</div>;
+    return (
+      <div style={{ padding: 20 }}>
+        页面内容
+        <button onClick={() => this.close()}>点我关闭当前页面</button>
+      </div>
+    );
   }
 }
 
@@ -62,3 +71,5 @@ export default () => {
   );
 };
 ```
+
+<API src="../../src/Page.tsx"/>

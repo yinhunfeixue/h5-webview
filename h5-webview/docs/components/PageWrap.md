@@ -1,3 +1,7 @@
+---
+order: 4
+---
+
 # PageWrap
 
 **Page 组件的通用版**，区别在于
@@ -24,15 +28,20 @@ export default () => {
   return (
     <button
       onClick={() => {
-        PageManager.openPage<IPageWrapProps>({
-          classType: PageWrap,
-          props: {
-            title: 'pageWrap标题',
-            headerStyle: {
-              color: 'red',
-            },
-            children: <div>我是被pageWrap包裹的内容</div>,
+        const pageItem = PageManager.openPageWrap<IPageWrapProps>({
+          title: 'pageWrap标题',
+          headerStyle: {
+            color: 'red',
           },
+          children: (
+            <div
+              onClick={() => {
+                PageManager.closePage(pageItem);
+              }}
+            >
+              我是被pageWrap包裹的内容 <button>点我关闭页面</button>
+            </div>
+          ),
         });
       }}
     >
@@ -41,3 +50,5 @@ export default () => {
   );
 };
 ```
+
+<API src="../../src/PageWrap.tsx"/>
