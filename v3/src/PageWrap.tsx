@@ -1,9 +1,8 @@
-import IComponentProps from '@/base/interfaces/IComponentProps';
-import Page from '@/Page';
+import Page, { IPageProps } from '@/Page';
 import { CSSProperties, ReactNode } from 'react';
 
 interface IPageWrapState {}
-export interface IPageWrapProps extends IComponentProps {
+export interface IPageWrapProps extends IPageProps {
   /**
    * 页头样式名
    */
