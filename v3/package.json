@@ -1,7 +1,8 @@
 {
   "private": true,
   "name": "h5-webview",
-  "version": "1.0.0",
+  "version": "3.0.0",
+  "description": "h5版，仿原生view管理器",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -11,15 +12,21 @@
     "release": "npm run build && npm publish",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "publicNpm": "npm run build && npm login && npm version patch && npm publish",
+    "public": "npm run deploy && npm run publicNpm"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/yinhunfeixue/h5-webview.git"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "typings": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "es",
+    "lib"
+  ],
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -49,7 +56,6 @@
     "gh-pages": "^3.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
-    "yorkie": "^2.0.0",
-    "react-router": "^5.2.0"
+    "yorkie": "^2.0.0"
   }
 }

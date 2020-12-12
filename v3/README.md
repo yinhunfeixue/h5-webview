@@ -1,27 +1,9 @@
-# h5-webview
+## `npm install h5-webview`
 
-## Getting Started
+homepage: https://github.com/yinhunfeixue/h5-webview
 
-Install dependencies,
+## 简介
 
-```bash
-$ npm i
-```
+h5-webview 是一个仿原生 view 管理机制的组件库，包含 view 管理和 view 两部分
 
-Start the dev server,
-
-```bash
-$ npm start
-```
-
-Build documentation,
-
-```bash
-$ npm run docs:build
-```
-
-Build library via `father-build`,
-
-```bash
-$ npm run build
-```
+## [帮助文档](https://yinhunfeixue.github.io/h5-webview/)
