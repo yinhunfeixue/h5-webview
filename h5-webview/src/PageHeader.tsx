@@ -53,7 +53,7 @@ class PageHeader extends Component<IPageHeaderProps, IPageHeaderState> {
     return (
       <div className={classnames(styles.PageHeader, className)} style={style}>
         {this.renderBack()}
-        <h1 className={styles.Title}>{title}</h1>
+        <div className={styles.Title}>{title}</div>
         <div className={styles.Extra}>{extra}</div>
       </div>
     );

@@ -1,3 +1,4 @@
+import PageWrap, { IPageWrapProps } from '@/PageWrap';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PageItem from './PageItem';
@@ -27,7 +28,7 @@ class PageManager {
 
   /**
    * 打开新页面
-   * @param pageItem 页面数据
+   * @param pageItem 页面数据，如需手动关闭页面，可把此参数传入`PageManagerclosePage(pageItem)`
    * @param replaceSameType 是否替换同类型的页面
    */
   public static openPage<P>(
@@ -53,7 +54,18 @@ class PageManager {
   }
 
   /**
-   * 手动关闭页面
+   * 打开PageWrap
+   * @param props
+   */
+  public static openPageWrap(props: IPageWrapProps) {
+    PageManager.openPage({
+      classType: PageWrap,
+      props,
+    });
+  }
+
+  /**
+   * 关闭页面
    * @param pageItem 要关闭的PageItem实例
    */
   public static closePage(pageItem: PageItem) {

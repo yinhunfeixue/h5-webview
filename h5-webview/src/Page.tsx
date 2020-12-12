@@ -116,7 +116,7 @@ class Page<P extends IPageProps, S> extends Component<P, S> {
     );
   }
 
-  protected renderChildren() {
+  protected renderChildren(): ReactNode {
     return null;
   }
 
