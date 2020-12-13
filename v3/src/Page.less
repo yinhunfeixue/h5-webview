@@ -48,19 +48,19 @@
   right: 0;
   z-index: 101;
   box-sizing: border-box;
-  .Page {
-    animation: show 0.3s 1 ease-out;
-  }
-  .PageClose {
-    .PageClose;
-  }
   &[isnew='true'] {
-    @keyframes show {
-      0% {
-        transform: translateX(100%);
+    .Page {
+      animation: show 0.3s 1 ease-out;
+      @keyframes show {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+        }
       }
-      100% {
-      }
+    }
+    .PageClose {
+      .PageClose;
     }
   }
 }

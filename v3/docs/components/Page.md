@@ -37,8 +37,12 @@ import React from 'react';
 import { Page, PageManager } from 'h5-webview';
 
 class MyPage extends Page {
+  get index() {
+    return this.props.index || 1;
+  }
+
   protected get title() {
-    return '自定义页头';
+    return `自定义页头${this.index}`;
   }
 
   protected get headerStyle(): CSSProperties {
@@ -47,11 +51,27 @@ class MyPage extends Page {
     };
   }
 
+  protected get hideHeader() {
+    return this.index % 3 === 0;
+  }
+
   protected renderChildren() {
     return (
       <div style={{ padding: 20 }}>
         页面内容
-        <button onClick={() => this.close()}>点我关闭当前页面</button>
+        <button onClick={() => this.close()}>关闭当前页面</button>
+        <button
+          onClick={() => {
+            PageManager.openPage({
+              classType: MyPage,
+              props: {
+                index: this.index + 1,
+              },
+            });
+          }}
+        >
+          打开新页面
+        </button>
       </div>
     );
   }
