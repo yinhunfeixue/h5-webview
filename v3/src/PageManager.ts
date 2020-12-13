@@ -28,7 +28,7 @@ class PageManager {
 
   /**
    * 打开新页面
-   * @param pageItem 页面数据，如需手动关闭页面，可把此参数传入`PageManagerclosePage(pageItem)`
+   * @param pageItem 页面数据，如需手动关闭页面，可把此参数传入`PageManager.closePage(pageItem)`
    * @param replaceSameType 是否替换同类型的页面
    */
   public static openPage<P>(
@@ -90,7 +90,8 @@ class PageManager {
   }
 
   private static _updateRender() {
-    //从第0项开始循环，如果是最后两项，则先移除container，再添加；否则进行移除操作
+    // 从第0项开始循环，如果是最后两项，则先移除container，再添加；否则进行移除操作
+    // 作用是保留最后两个页面在显示列表中
     const len = this._pageList.length;
     for (let i = 0; i < len; i++) {
       const item = this._pageList[i];
