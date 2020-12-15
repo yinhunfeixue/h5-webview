@@ -2,6 +2,7 @@
 
 ## `npm install h5-webview`
 
+<img src='./assets/demo.gif' />
 ## 功能介绍
 
 仿原生 APP 的页面组件、页面管理器
@@ -33,6 +34,9 @@ PageManager.closePage(pageItem);
 this.close();
 ```
 
+## 结构图
+
+<img src='./assets/struct.jpg' />
 ## 显示组件
 
 本章节介绍几种显示组件的：区别、不同需求如何选择正确的组件
