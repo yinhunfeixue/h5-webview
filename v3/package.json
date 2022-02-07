@@ -1,6 +1,6 @@
 {
   "name": "h5-webview",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "h5版，仿原生view管理器",
   "scripts": {
     "start": "dumi dev",
