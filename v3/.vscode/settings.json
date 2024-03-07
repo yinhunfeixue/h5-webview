@@ -27,6 +27,6 @@
   "prettier.proseWrap": "always",
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.organizeImports": "explicit"
   }
 }
